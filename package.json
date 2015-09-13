@@ -1,0 +1,13 @@
+{
+  "name"         : "node-scrape-nav",
+  "version"      : "0.0.1",
+  "description"  : "Antall stillinger fra nav.no",
+  "main"         : "server.js",
+  "author"       : "Tov Are Jacobsen",
+  "dependencies" : {
+    "express"    : "latest",
+    "request"    : "latest",
+    "cheerio"    : "latest",
+    "forever"    : "latest"
+  }
+}
