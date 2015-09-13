@@ -2,10 +2,6 @@
  * Enkelt script som henter antall stillinger fra nav.no
  * kan kalles med f.eks. 
  *   https://tovare.com/api/stillinger?callback=
- *
- *
- * $ forever start simple-server.js
- * $ forever list
  */
 
 var express = require('express');
@@ -14,6 +10,13 @@ var request = require('request');
 var cheerio = require('cheerio');
 var app     = express();
 
+
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/api', function(req, res){
     res.send("/api/stillinger - hent antall stillinger akuratt nå.");
